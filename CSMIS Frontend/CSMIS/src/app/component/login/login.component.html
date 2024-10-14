@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="signin-signup">
+    <!-- Sign In Form -->
+    <form #signInForm="ngForm" (ngSubmit)="onSignIn(signInForm)" class="sign-in-form">
+      <h2 class="title">Sign In Here!</h2>
+
+      <div class="input-field">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Username" name="username" [(ngModel)]="signIn.username" required>
+      </div>
+
+      <div class="input-field">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Password" name="password" [(ngModel)]="signIn.password" required>
+      </div>
+
+      <input type="submit" value="Login" class="btn" [disabled]="!signInForm.valid">
+      <p class="social-text">Visit us on social platforms</p>
+
+      <div class="social-media">
+        <a href="" class="social-icon"><i class="fab fa-facebook"></i></a>
+        <a href="" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="" class="social-icon"><i class="fab fa-google"></i></a>
+        <a href="" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </form>
+
+    <!-- Forget Password Form -->
+    <form #forgetPasswordForm="ngForm" (ngSubmit)="onForgetPassword(forgetPasswordForm)" class="forgetpassword-form">
+      <h2 class="title">Change Here</h2>
+
+      <div class="input-field">
+        <i class="fas fa-user"></i>
+        <input type="email" placeholder="Email" name="email" [(ngModel)]="forgetPassword.email" required email>
+      </div>
+
+      <div class="input-field">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Old Password" name="oldPassword" [(ngModel)]="forgetPassword.oldPassword" required>
+      </div>
+
+      <div class="input-field">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="New Password" name="newPassword" [(ngModel)]="forgetPassword.newPassword" required>
+      </div>
+
+      <input type="submit" value="Change PW" class="btn" [disabled]="!forgetPasswordForm.valid">
+      <p class="social-text">More Details about us</p>
+
+      <div class="social-media">
+        <a href="" class="social-icon"><i class="fab fa-facebook"></i></a>
+        <a href="" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="" class="social-icon"><i class="fab fa-google"></i></a>
+        <a href="" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </form>
+  </div>
+
+  <div class="panels-container">
+    <div class="panel left-panel">
+      <div class="content">
+        <h3>Dir Ace Technology</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <button class="btn" id="sign-in-btn">Go Back</button>
+      </div>
+      <img src="" alt="" class="image">
+    </div>
+    <div class="panel right-panel">
+      <div class="content">
+        <h3>Dir Ace Technology</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <button class="btn" id="sign-up-btn">Forget password</button>
+      </div>
+      <img src="" alt="" class="image">
+    </div>
+  </div>
+</div>
+      
