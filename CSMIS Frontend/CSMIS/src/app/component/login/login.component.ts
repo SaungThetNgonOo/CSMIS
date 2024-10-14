@@ -1,48 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
-  isSignUpMode: boolean = false; // Tracks if it's sign-up/forget password mode
-
-  // Sign-in model
-  signIn = {
-    username: '',
-    password: ''
-  };
-
-  // Forget password model
-  forgetPassword = {
-    email: '',
-    oldPassword: '',
-    newPassword: ''
-  };
-
-  // Toggle between sign-in and forget password forms
-  toggleSignUpMode() {
-    this.isSignUpMode = true;
+export class LoginComponent implements OnInit {
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
 
-  toggleSignInMode() {
-    this.isSignUpMode = false;
-  }
-
-  // Handle sign-in form submission
-  onSignIn(form: any) {
+  staffId: string = '';
+  password: string = '';
+ 
+  onSubmit(form: NgForm) {
     if (form.valid) {
-      console.log('Sign-in form data:', this.signIn);
-      // Handle sign-in logic here
+      // Handle the form submission logic here
+      console.log('Form Submitted', form.value);
     }
   }
-
-  // Handle forget password form submission
-  onForgetPassword(form: any) {
-    if (form.valid) {
-      console.log('Forget password form data:', this.forgetPassword);
-      // Handle password change logic here
-    }
-  }
+ 
 }

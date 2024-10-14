@@ -1,0 +1,14 @@
+<h2>Add New Announcement</h2>
+<form (ngSubmit)="addAnnouncement()">
+  <label>Title:</label>
+  <input [(ngModel)]="announcement.title" name="title" required>
+
+  <label>Message:</label>
+  <textarea [(ngModel)]="announcement.message" name="message" required></textarea>
+
+  <label>Attach File:</label>
+  <input type="file" (change)="onFileSelected($event)" />
+
+  <button type="submit">Create Announcement</button>
+</form>
+

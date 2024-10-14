@@ -1,0 +1,9 @@
+<div *ngFor="let announcement of announcements">
+    <h3>{{ announcement.title }}</h3>
+    <p>{{ announcement.message }}</p>
+    <small>Created on: {{ announcement.createdDate | date }}</small>
+    <div *ngIf="announcement.filePath">
+      <a [href]="announcement.filePath" target="_blank">View File</a>
+    </div>
+  </div>
+  
